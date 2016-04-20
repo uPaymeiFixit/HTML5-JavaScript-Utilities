@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="author" content="Josh Gibbs" />
+		<title>Utilities Template</title>
+        <!--Required Utilities-->
+		<script language="JavaScript" type="text/javascript" src="main.js"></script>
+        <script language="JavaScript" type="text/javascript" src="utils/Canvas.js"></script>
+        <script language="JavaScript" type="text/javascript" src="utils/requestAnimationFrame.js"></script>
+        <!--Optional Utilities-->
+        <script language="JavaScript" type="text/javascript" src="utils/Input.js"></script>
+		<script language="JavaScript" type="text/javascript" src="utils/ColorSpaceConversions.js"></script>
+        <script language="JavaScript" type="text/javascript">
+
+            window.onload = _template_setup;
+
+            function _template_setup() {
+                var _template_ctx = new Canvas({color:'grey', dblclick_fullscreen:false});
+                setup(_template_ctx);
+                _template_loop(_template_ctx);
+            }
+
+            function _template_loop(ctx) {
+                requestAnimationFrame(_template_loop);
+                loop(ctx);
+            }
+
+        </script>
+	</head>
+	<body>
+	</body>
+</html>
