@@ -1,9 +1,7 @@
 const g = 9.81; // m/s^2
-const g_slow_rate = 3;
-const bounce_efficiency = 0.8; // (80% Kinetic energy maintained)
-const color_slow_rate = 10000;
-const jump_rate = 2;
-const block_space = 50;
+const g_slow_rate = 30;
+const jump_rate = 20;
+const block_space = 200;
 const block_width = 10;
 const block_speed = 5;
 const block_frequency = 4;
@@ -58,10 +56,10 @@ function loop() {
     if (!game_over) {
 
         // Move the player
+        player.vy += g / g_slow_rate;
         player.y += player.vy;
-        player.y += g / g_slow_rate;
         // ################## DEBUG ###################
-        player.y = ctx.height / 2;
+        // player.y = ctx.height / 2;
         // ################## DEBUG ###################
 
         // Stop the ball when it hits the ground (y mod)
